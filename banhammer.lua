@@ -10,9 +10,8 @@ local On = Instance.new("StringValue")
 Tool0 = Instance.new("Tool")
 Part1 = Instance.new("Part")
 SpecialMesh2 = Instance.new("SpecialMesh")
-Tool0.Name = "BannHammer"
+Tool0.Name = "Ban Hammer"
 Tool0.Parent = game.Players.LocalPlayer.Backpack
-Tool0.TextureId = "http://www.roblox.com/asset/?id=10684453"
 Tool0.Grip = CFrame.new(0.100000001, -0.400000006, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 Tool0.GripPos = Vector3.new(0.10000000149011612, -0.4000000059604645, 0)
 Tool0.ToolTip = "Ban Hammer"
