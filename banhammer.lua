@@ -1,43 +1,63 @@
---[=[
- d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
-88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
-88      88    88    88            odD'      88      88    88 88ooo88 
-88  ooo 88    88    88          .88'        88      88    88 88~~~88 
-88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
- Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
-]=]
+--Ban Hammer made by ERROR_CODE
+local BanSound = Instance.new("Sound") 
+local Id = "147722910"
+BanSound.Parent = game.Workspace
+BanSound.SoundId = "rbxassetid://"..Id
+BanSound.Looped = false
+BanSound.Volume = 1
+local mouse = game.Players.LocalPlayer:GetMouse()
+local On = Instance.new("StringValue")
+Tool0 = Instance.new("Tool")
+Part1 = Instance.new("Part")
+SpecialMesh2 = Instance.new("SpecialMesh")
+Tool0.Name = "BannHammer"
+Tool0.Parent = game.Players.LocalPlayer.Backpack
+Tool0.TextureId = "http://www.roblox.com/asset/?id=10684453"
+Tool0.Grip = CFrame.new(0.100000001, -0.400000006, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Tool0.GripPos = Vector3.new(0.10000000149011612, -0.4000000059604645, 0)
+Tool0.ToolTip = "Ban Hammer"
+Part1.Name = "Handle"
+Part1.Parent = Tool0
+Part1.CFrame = CFrame.new(10.9154053, 1, -20.9892578, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Part1.Orientation = Vector3.new(90, 0, 0)
+Part1.Position = Vector3.new(10.9154052734375, 1, -18.9892578125)
+Part1.Rotation = Vector3.new(-90, 0, 0)
+Part1.Color = Color3.new(0.960784, 0.803922, 0.188235)
+Part1.Size = Vector3.new(0.5, 0.5, 0.5)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.BrickColor = BrickColor.new("Bright yellow")
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.brickColor = BrickColor.new("Bright yellow")
+Part1.FormFactor = Enum.FormFactor.Custom
+Part1.formFactor = Enum.FormFactor.Custom
+SpecialMesh2.Parent = Part1
+SpecialMesh2.MeshId = "http://www.roblox.com/asset/?id=10604848"
+SpecialMesh2.Scale = Part1.Size
+SpecialMesh2.TextureId = "http://www.roblox.com/asset?id=10605252"
+SpecialMesh2.MeshType = Enum.MeshType.FileMesh
+On.Parent = Tool0
+On.Value = "Off"
+AnimationId = "32659706"
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..AnimationId
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
 
--- Instances: 4 | Scripts: 0 | Modules: 0 | Tags: 0
-local G2L = {};
+AnimationId2 = "32659706"
+local Anim2 = Instance.new("Animation")
+Anim2.AnimationId = "rbxassetid://"..AnimationId2
+local k2 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim2)
 
--- Workspace.ScreenGui.BanHammer
-G2L["2"] = Instance.new("Tool", G2L["1"]);
--- [ERROR] cannot convert Grip, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["2"]["CanBeDropped"] = false;
--- [ERROR] cannot convert WorldPivot, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["2"]["TextureId"] = [[http://www.roblox.com/asset/?id=10684453]];
-G2L["2"]["Name"] = [[BanHammer]];
-
-
--- Workspace.ScreenGui.BanHammer.Handle
-G2L["3"] = Instance.new("MeshPart", G2L["2"]);
-G2L["3"]["TextureID"] = [[http://www.roblox.com/asset/?id=10605252]];
--- [ERROR] cannot convert CFrame, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["3"]["RenderFidelity"] = Enum.RenderFidelity.Precise;
-G2L["3"]["MeshId"] = [[http://www.roblox.com/asset/?id=10604848]];
-G2L["3"]["EnableFluidForces"] = false;
-G2L["3"]["CollisionFidelity"] = Enum.CollisionFidelity.Default;
-G2L["3"]["Size"] = Vector3.new(2, 5, 3);
-G2L["3"]["Rotation"] = Vector3.new(-90, 0, 0);
-G2L["3"]["Name"] = [[Handle]];
--- [ERROR] cannot convert PivotOffset, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-
-
--- Workspace.ScreenGui.BanHammer.Handle.TouchInterest
-G2L["4"] = Instance.new("TouchTransmitter", G2L["3"]);
-G2L["4"]["Name"] = [[TouchInterest]];
-G2L["4"]["Archivable"] = true;
-
-
-
-return G2L["1"], require;
+mouse.Button1Up:Connect(function()
+	if On.Value == "Off" then
+	else
+		if mouse.Target.Locked == true then
+			BanSound:Stop()
+			BanSound.Playing = true
+			mouse.Target:Destroy()
+		else
+			BanSound:Stop()
+			BanSound.Playing = true
+			mouse.Target:Destroy()
+		end
+	end
+end)
